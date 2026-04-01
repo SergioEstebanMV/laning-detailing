@@ -43,4 +43,4 @@ Puedes visitarlo en: `https://[tu-usuario].github.io/[nombre-repositorio]`
 - `docs: agregar README con documentación del proyecto`
 
 ## 👨‍💻 Autores
-**Sergio mutis, Isaac vejar** - Estudiante de Ingeniería Informática, INACAP
+**Sergio Mutis, Isaac Vejar** - Estudiante de Ingeniería Informática, INACAP
