@@ -10,6 +10,10 @@ Sitio web promocional para un emprendimiento de lavado de autos a domicilio en M
 - **CSS3** (variables, flexbox, media queries, hover/focus, transiciones)
 - **Bootstrap 5** (sistema de grillas)
 - **Google Fonts** (tipografía Bangers)
+- ## ✨ Características
+- Formulario de contacto que envía consultas directamente a WhatsApp
+- Diseño responsive con media queries propias
+- Efectos hover y focus para accesibilidad
 
 ## 🤖 Asistencia de IA
 Utilicé **ChatGPT** como asistente para:
