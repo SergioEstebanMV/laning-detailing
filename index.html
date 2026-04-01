@@ -169,7 +169,7 @@ address {
     margin-bottom: 1rem;
 }
 
-/* ========== MEDIA QUERIES PROPIAS (responsividad sin depender solo de Bootstrap) ========== */
+/* ========== MEDIA QUERIES PROPIAS ========== */
 @media (max-width: 768px) {
     .titulo {
         font-size: 2rem;
@@ -285,30 +285,30 @@ address {
         </div>
     </section>
 
-    <!-- ========== FORMULARIO DE CONTACTO (requerimiento clave) ========== -->
-    <section class="container my-5" id="contacto">
-        <h2 class="text-center titulo mb-4">Contáctanos</h2>
-        <form class="row g-3 w-75 mx-auto" action="#" method="post">
-            <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Nombre completo" required aria-label="Nombre">
-            </div>
-            <div class="col-md-6">
-                <input type="email" class="form-control" placeholder="Correo electrónico" required aria-label="Correo">
-            </div>
-            <div class="col-12">
-                <input type="text" class="form-control" placeholder="Vehículo (marca / modelo)" aria-label="Vehículo">
-            </div>
-            <div class="col-12">
-                <textarea class="form-control" rows="4" placeholder="¿Qué servicio te interesa? Cuéntanos..." required aria-label="Mensaje"></textarea>
-            </div>
-            <div class="col-12 text-center">
-                <button type="submit" class="btn btn-custom px-4">Enviar consulta</button>
-            </div>
-        </form>
-    </section>
+    <!-- ========== FORMULARIO DE CONTACTO CON WHATSAPP ========== -->
+<section class="container my-5" id="contacto">
+    <h2 class="text-center titulo mb-4">Contáctanos</h2>
+    <form class="row g-3 w-75 mx-auto" onsubmit="enviarWhatsApp(event)">
+        <div class="col-md-6">
+            <input type="text" id="nombre" class="form-control" placeholder="Nombre completo" required>
+        </div>
+        <div class="col-md-6">
+            <input type="email" id="email" class="form-control" placeholder="Correo electrónico" required>
+        </div>
+        <div class="col-12">
+            <input type="text" id="vehiculo" class="form-control" placeholder="Vehículo (marca / modelo)">
+        </div>
+        <div class="col-12">
+            <textarea id="mensaje" class="form-control" rows="4" placeholder="¿Qué servicio te interesa? Cuéntanos..." required></textarea>
+        </div>
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-custom px-4">Enviar consulta por WhatsApp</button>
+        </div>
+    </form>
+</section>
 </main>
 
-<!-- ========== FOOTER CON ADDRESS (semántica mejorada) ========== -->
+<!-- ========== FOOTER CON ADDRESS ========== -->
 <footer>
     <div class="container text-center">
         <img src="logo.jpeg" class="logo mb-3" alt="Logo Eme Detailing">
@@ -323,6 +323,23 @@ address {
         <p class="mt-3">© 2026 Eme Detailing | Todos los derechos reservados</p>
     </div>
 </footer>
+    <script>
+function enviarWhatsApp(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const vehiculo = document.getElementById('vehiculo').value;
+    const mensaje = document.getElementById('mensaje').value;
+    
+    const texto = `Hola, vengo de la web Eme Detailing.%0A%0A*Datos de contacto:*%0ANombre: ${nombre}%0AEmail: ${email}%0AVehículo: ${vehiculo}%0A%0A*Consulta:*%0A${mensaje}`;
+    
+    const numero = '56959863089';
+    const url = `https://wa.me/${numero}?text=${texto}`;
+    
+    window.open(url, '_blank');
+}
+</script>
 
 </body>
 </html>
