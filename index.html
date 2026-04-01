@@ -3,203 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eme Detailing</title>
+<title>Eme Detailing | Lavado de autos a domicilio</title>
 
+<!-- Bootstrap 5 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
 <style>
+/* ========== VARIABLES CSS (accesibilidad y consistencia) ========== */
 :root {
     --azul: #007bff;
     --celeste: #4cc9f0;
+    --morado: #8a2be2;
+    --negro: #000000;
+    --blanco: #ffffff;
 }
 
+/* ========== ESTILOS GLOBALES ========== */
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--negro);
+    color: var(--blanco);
 }
 
 h1, h2, h3 {
     font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
 }
 
-/* NAV */
+/* ========== NAVEGACIÓN ========== */
 nav {
-    background-color: black;
+    background-color: var(--negro);
     border-bottom: 1px solid var(--celeste);
 }
 
-/* LOGO */
 .logo {
     height: 90px;
+    transition: transform 0.3s ease;
 }
 
-/* HEADER  */
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* ========== HEADER CON OVERLAY MEJORADO (contraste WCAG) ========== */
 header {
     height: 90vh;
     display: flex;
     align-items: center;
     text-align: center;
     background: 
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url('image.png');
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), /* Mayor opacidad para contraste */
+        url('image.png');
     background-size: cover;
     background-position: center;
 }
 
-/* TITULO */
 .titulo {
-    color: black;
-    -webkit-text-stroke: 2px #8a2be2; /* morado */
-    text-shadow: 0 0 10px #8a2be2;
+    color: var(--blanco);
+    text-shadow: 0 0 15px var(--morado);
+    -webkit-text-stroke: 1px var(--morado);
+    text-stroke: 1px var(--morado);
 }
 
-/* TITULO SECUNDARIO*/
-
-.titulo-secundario {
-    color: black;
-    -webkit-text-stroke: 2px #4cc9f0; /* celeste */
-    text-shadow: 0 0 10px #4cc9f0;
-}
-
-/* BOTONES */
+/* ========== BOTONES CON EFECTOS HOVER Y FOCUS (accesibilidad) ========== */
 .btn-custom {
     background: linear-gradient(to right, var(--celeste), var(--azul));
     border: none;
-    color: black;
+    color: var(--negro);
     font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--celeste);
+    outline: 2px solid var(--blanco);
+    background: linear-gradient(to right, var(--azul), var(--celeste));
 }
 
 .btn-wsp {
     background: #25D366;
-    color: white;
+    color: var(--blanco);
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* CARDS */
+.btn-wsp:hover,
+.btn-wsp:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #25D366;
+    outline: 2px solid var(--blanco);
+}
+
+/* ========== CARDS (SERVICIOS) ========== */
 .card {
-    background-color: #000;
+    background-color: var(--negro);
     border: 1px solid var(--celeste);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    border-color: var(--blanco);
+    box-shadow: 0 0 20px var(--celeste);
+    transform: translateY(-5px);
 }
 
 .precio {
     color: var(--celeste);
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
+/* Listas de servicios con íconos (mejora semántica) */
 .detalle {
-    color: #ccc;
+    color: #cccccc;
+    list-style: none;
+    padding-left: 0;
 }
 
-/* FOOTER PRO */
+.detalle li {
+    margin-bottom: 0.5rem;
+}
+
+.detalle li::before {
+    content: "✔ ";
+    color: var(--celeste);
+    font-weight: bold;
+}
+
+/* ========== FORMULARIO DE CONTACTO (accesibilidad) ========== */
+form input,
+form textarea {
+    background-color: #222;
+    border: 1px solid var(--celeste);
+    color: var(--blanco);
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    background-color: #333;
+    border-color: var(--blanco);
+    box-shadow: 0 0 8px var(--celeste);
+    outline: none;
+    color: var(--blanco);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+}
+
+/* ========== FOOTER CON ADDRESS SEMÁNTICO ========== */
 footer {
-    background: black;
+    background: var(--negro);
     border-top: 1px solid var(--celeste);
     padding: 30px 0;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 1rem;
+}
+
+/* ========== MEDIA QUERIES PROPIAS (responsividad sin depender solo de Bootstrap) ========== */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+        -webkit-text-stroke: 0.5px var(--morado);
+    }
+    
+    header {
+        height: 70vh;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .logo {
+        height: 70px;
+    }
+    
+    .btn-custom,
+    .btn-wsp {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .titulo {
+        font-size: 1.8rem;
+    }
+    
+    h2.titulo {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- ========== NAVEGACIÓN PRINCIPAL ========== -->
 <nav class="navbar navbar-expand-lg">
-<div class="container">
-
-    <img src="logo.jpeg" class="logo">
-
-    <div class="ms-auto">
-        <a href="#" class="btn btn-outline-light me-2">Acceso Cliente</a>
-        <a href="https://wa.me/56959863089" class="btn btn-wsp">Reservar</a>
+    <div class="container">
+        <img src="logo.jpeg" class="logo" alt="Logo Eme Detailing">
+        <div class="ms-auto">
+            <a href="#" class="btn btn-outline-light me-2">Acceso Cliente</a>
+            <a href="https://wa.me/56959863089" class="btn btn-wsp">Reservar</a>
+        </div>
     </div>
-
-</div>
 </nav>
 
-<!-- HEADER -->
+<!-- ========== HEADER: PRESENTACIÓN Y LLAMADO A LA ACCIÓN ========== -->
 <header>
-<div class="container">
-    <h1 class="display-3 titulo">Eme Detailing</h1>
-    <p>¡Cero filas, solo brillo!</p>
-    <p>📍 Servicio a domicilio en Maipú y alrededores</p>
-
-    <a href="#precios" class="btn btn-custom mt-3">Ver servicios</a>
-</div>
+    <div class="container">
+        <h1 class="display-3 titulo">Eme Detailing</h1>
+        <p class="lead">¡Cero filas, solo brillo!</p>
+        <p>📍 Servicio a domicilio en Maipú y alrededores</p>
+        <a href="#precios" class="btn btn-custom mt-3">Ver servicios</a>
+    </div>
 </header>
 
-<!-- MAIN -->
+<!-- ========== CONTENIDO PRINCIPAL ========== -->
 <main class="container my-5">
+    <!-- SECCIÓN SERVICIOS (con article semántico) -->
+    <section id="precios">
+        <h2 class="text-center titulo mb-5">Nuestros Servicios</h2>
+        <div class="row">
+            
+            <!-- Servicio Express -->
+            <article class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <h3>Express</h3>
+                    <p class="precio">Citycar: $13.000<br>Sedan: $16.000<br>SUV: $19.000</p>
+                    <ul class="detalle">
+                        <li>Aspirado</li>
+                        <li>Lavado</li>
+                        <li>Vidrios</li>
+                        <li>Ruedas</li>
+                        <li>Gomas</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <!-- Servicio Full -->
+            <article class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <h3>Full</h3>
+                    <p class="precio">Citycar: $19.000<br>Sedan: $24.000<br>SUV: $29.000</p>
+                    <ul class="detalle">
+                        <li>Todo el servicio Express</li>
+                        <li>Limpieza de puertas</li>
+                        <li>Aplicación de cera protectora</li>
+                    </ul>
+                </div>
+            </article>
+            
+            <!-- Servicio Full Detallado -->
+            <article class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <h3>Full Detallado</h3>
+                    <p class="precio">Citycar: $29.000<br>Sedan: $34.000<br>SUV: $39.000</p>
+                    <ul class="detalle">
+                        <li>Todo el servicio Full</li>
+                        <li>Detallado profesional</li>
+                        <li>Productos Meguiar’s</li>
+                        <li>Limpieza profunda</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
 
-<section id="precios">
-<h2 class="text-center titulo-secundario mb-5">Servicios</h2>
-
-<div class="row">
-
-<div class="col-md-4">
-<div class="card p-3">
-<h3>Express</h3>
-<p class="precio">Citycar: $13.000<br>Sedan: $16.000<br>SUV: $19.000</p>
-<p class="detalle">✔ Aspirado ✔ Lavado ✔ Vidrios ✔ Ruedas ✔ Gomas</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3">
-<h3>Full</h3>
-<p class="precio">Citycar: $19.000<br>Sedan: $24.000<br>SUV: $29.000</p>
-<p class="detalle">✔ Express + Puertas + Cera</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3">
-<h3>Full Detallado</h3>
-<p class="precio">Citycar: $29.000<br>Sedan: $34.000<br>SUV: $39.000</p>
-<p class="detalle">✔ Detallado + Meguiar’s + Profundo</p>
-</div>
-</div>
-
-</div>
-</section>
-
+    <!-- ========== FORMULARIO DE CONTACTO (requerimiento clave) ========== -->
+    <section class="container my-5" id="contacto">
+        <h2 class="text-center titulo mb-4">Contáctanos</h2>
+        <form class="row g-3 w-75 mx-auto" action="#" method="post">
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Nombre completo" required aria-label="Nombre">
+            </div>
+            <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="Correo electrónico" required aria-label="Correo">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="Vehículo (marca / modelo)" aria-label="Vehículo">
+            </div>
+            <div class="col-12">
+                <textarea class="form-control" rows="4" placeholder="¿Qué servicio te interesa? Cuéntanos..." required aria-label="Mensaje"></textarea>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-custom px-4">Enviar consulta</button>
+            </div>
+        </form>
+    </section>
 </main>
 
-<!-- FOOTER COMPLETO -->
+<!-- ========== FOOTER CON ADDRESS (semántica mejorada) ========== -->
 <footer>
-<div class="container">
-
-<div class="row text-center text-md-start align-items-center">
-
-    <!-- LOGO -->
-    <div class="col-md-3 mb-3">
-        <img src="logo.jpeg" class="logo">
+    <div class="container text-center">
+        <img src="logo.jpeg" class="logo mb-3" alt="Logo Eme Detailing">
+        
+        <address>
+            📱 WhatsApp: <a href="https://wa.me/56959863089" class="text-decoration-none text-white">+56 9 5986 3089</a><br>
+            📍 Servicio a domicilio: Maipú y alrededores<br>
+            ⏰ Horario: Lunes a Sábado, 9:00 - 19:00 hrs
+        </address>
+        
+        <p>🚗 Detailing automotriz profesional a domicilio</p>
+        <p class="mt-3">© 2026 Eme Detailing | Todos los derechos reservados</p>
     </div>
-
-    <!-- CONTACTO -->
-    <div class="col-md-3 mb-3">
-        <p>📱 WhatsApp</p>
-        <p>+56 9 5986 3089</p>
-    </div>
-
-    <!-- HORARIO -->
-    <div class="col-md-3 mb-3">
-        <p>⏰ Horario</p>
-        <p>Lunes a Sábado<br>9:00 - 19:00</p>
-    </div>
-
-    <!-- INFO -->
-    <div class="col-md-3 mb-3">
-        <p>🚗 Servicio</p>
-        <p>Detailing a domicilio</p>
-    </div>
-
-</div>
-
-<div class="text-center mt-3">
-    <p>© 2026 Eme Detailing</p>
-</div>
-
-</div>
 </footer>
 
 </body>
