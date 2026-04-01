@@ -1,0 +1,198 @@
+/* ========== VARIABLES CSS (accesibilidad y consistencia) ========== */
+:root {
+    --azul: #007bff;
+    --celeste: #4cc9f0;
+    --morado: #8a2be2;
+    --negro: #000000;
+    --blanco: #ffffff;
+}
+
+/* ========== ESTILOS GLOBALES ========== */
+body {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+h1, h2, h3 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+}
+
+/* ========== NAVEGACIÓN ========== */
+nav {
+    background-color: var(--negro);
+    border-bottom: 1px solid var(--celeste);
+}
+
+.logo {
+    height: 90px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* ========== HEADER CON OVERLAY MEJORADO (contraste WCAG) ========== */
+header {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), /* Mayor opacidad para contraste */
+        url('image.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.titulo {
+    color: var(--blanco);
+    text-shadow: 0 0 15px var(--morado);
+    -webkit-text-stroke: 1px var(--morado);
+    text-stroke: 1px var(--morado);
+}
+
+/* ========== BOTONES CON EFECTOS HOVER Y FOCUS (accesibilidad) ========== */
+.btn-custom {
+    background: linear-gradient(to right, var(--celeste), var(--azul));
+    border: none;
+    color: var(--negro);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--celeste);
+    outline: 2px solid var(--blanco);
+    background: linear-gradient(to right, var(--azul), var(--celeste));
+}
+
+.btn-wsp {
+    background: #25D366;
+    color: var(--blanco);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-wsp:hover,
+.btn-wsp:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #25D366;
+    outline: 2px solid var(--blanco);
+}
+
+/* ========== CARDS (SERVICIOS) ========== */
+.card {
+    background-color: var(--negro);
+    border: 1px solid var(--celeste);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    border-color: var(--blanco);
+    box-shadow: 0 0 20px var(--celeste);
+    transform: translateY(-5px);
+}
+
+.precio {
+    color: var(--celeste);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Listas de servicios con íconos (mejora semántica) */
+.detalle {
+    color: #cccccc;
+    list-style: none;
+    padding-left: 0;
+}
+
+.detalle li {
+    margin-bottom: 0.5rem;
+}
+
+.detalle li::before {
+    content: "✔ ";
+    color: var(--celeste);
+    font-weight: bold;
+}
+
+/* ========== FORMULARIO DE CONTACTO (accesibilidad) ========== */
+form input,
+form textarea {
+    background-color: #222;
+    border: 1px solid var(--celeste);
+    color: var(--blanco);
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    background-color: #333;
+    border-color: var(--blanco);
+    box-shadow: 0 0 8px var(--celeste);
+    outline: none;
+    color: var(--blanco);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+}
+
+/* ========== FOOTER CON ADDRESS SEMÁNTICO ========== */
+footer {
+    background: var(--negro);
+    border-top: 1px solid var(--celeste);
+    padding: 30px 0;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 1rem;
+}
+
+/* ========== MEDIA QUERIES PROPIAS ========== */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+        -webkit-text-stroke: 0.5px var(--morado);
+    }
+    
+    header {
+        height: 70vh;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .logo {
+        height: 70px;
+    }
+    
+    .btn-custom,
+    .btn-wsp {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .titulo {
+        font-size: 1.8rem;
+    }
+    
+    h2.titulo {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
