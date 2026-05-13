@@ -89,21 +89,50 @@ footer {
     padding: 30px 0;
 }
 
-/* GALERIA */
+/* --- NUEVA GALERÍA MODIFICADA --- */
+
+.galeria-scroll {
+    display: flex;
+    overflow-x: auto; /* Permite el deslizamiento lateral */
+    gap: 20px;
+    padding: 40px 20px;
+    scroll-snap-type: x mandatory; /* Hace que las fotos "encajen" al deslizar */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+}
+
+.galeria-scroll::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar en Chrome/Safari */
+}
+
+.galeria-item {
+    flex: 0 0 auto;
+    width: 250px; /* Tamaño base cuadrado */
+    height: 250px; 
+    scroll-snap-align: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
 .galeria-img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Mantiene la imagen cuadrada sin deformar */
     border: 3px solid var(--celeste);
     border-radius: 15px;
-    transition: 0.3s;
-    box-shadow: 0 0 10px var(--celeste);
+    box-shadow: 0 0 15px var(--celeste);
 }
 
-.galeria-img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px var(--celeste);
+/* Efecto para resaltar la imagen que esté en el centro (simulado con hover para esta entrega) */
+.galeria-item:hover {
+    transform: scale(1.15); /* Se agranda al pasar el mouse o tocar */
+    z-index: 5;
+}
+
+/* Ajuste para móviles: si la pantalla es pequeña, el tamaño base baja un poco */
+@media (max-width: 600px) {
+    .galeria-item {
+        width: 200px;
+        height: 200px;
+    }
 }
 </style>
 </head>
@@ -112,13 +141,10 @@ footer {
 
 <nav class="navbar navbar-expand-lg">
 <div class="container">
-
     <img src="logo.jpeg" class="logo">
-
     <div class="ms-auto">
         <a href="https://wa.me/56959863089" class="btn btn-wsp">Reservar</a>
     </div>
-
 </div>
 </nav>
 
@@ -127,7 +153,6 @@ footer {
     <h1 class="display-3 titulo">Eme Detailing</h1>
     <p>¡Cero filas, solo brillo!</p>
     <p>📍 Servicio a domicilio en Maipú y alrededores</p>
-
     <a href="#precios" class="btn btn-custom mt-3">Ver servicios</a>
 </div>
 </header>
@@ -135,163 +160,81 @@ footer {
 <main class="container my-5">
 
 <section id="precios">
-
 <h2 class="text-center titulo-secundario mb-5">Servicios</h2>
-
 <div class="row">
-
-<div class="col-md-4">
-<div class="card p-3">
-<h3>Express</h3>
-<p class="precio">
-Citycar: $13.000<br>
-Sedan: $16.000<br>
-SUV: $19.000
-</p>
-<p class="detalle">
-✔ Aspirado ✔ Lavado ✔ Vidrios ✔ Ruedas ✔ Gomas
-</p>
+    <div class="col-md-4">
+        <div class="card p-3 mb-3">
+            <h3>Express</h3>
+            <p class="precio">Citycar: $13.000<br>Sedan: $16.000<br>SUV: $19.000</p>
+            <p class="detalle">✔ Aspirado ✔ Lavado ✔ Vidrios ✔ Ruedas ✔ Gomas</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 mb-3">
+            <h3>Full</h3>
+            <p class="precio">Citycar: $19.000<br>Sedan: $24.000<br>SUV: $29.000</p>
+            <p class="detalle">✔ Express + Puertas + Cera</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 mb-3">
+            <h3>Full Detallado</h3>
+            <p class="precio">Citycar: $29.000<br>Sedan: $34.000<br>SUV: $39.000</p>
+            <p class="detalle">✔ Detallado + Meguiar’s + Profundo</p>
+        </div>
+    </div>
 </div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3">
-<h3>Full</h3>
-<p class="precio">
-Citycar: $19.000<br>
-Sedan: $24.000<br>
-SUV: $29.000
-</p>
-<p class="detalle">
-✔ Express + Puertas + Cera
-</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3">
-<h3>Full Detallado</h3>
-<p class="precio">
-Citycar: $29.000<br>
-Sedan: $34.000<br>
-SUV: $39.000
-</p>
-<p class="detalle">
-✔ Detallado + Meguiar’s + Profundo
-</p>
-</div>
-</div>
-
-</div>
-
 </section>
-
-<!-- GALERIA -->
 
 <section id="galeria" class="mt-5">
-
-<h2 class="text-center titulo-secundario mb-5">
-Galería
-</h2>
-
-<div class="galeria-scroll">
-
-<div class="galeria-item">
-<img src="img/1.jpg" class="img-fluid galeria-img">
-</div>
-
-<div class="galeria-item">
-<img src="img/2.jpg" class="img-fluid galeria-img">
-</div>
-
-<div class="galeria-item">
-<img src="img/3.jpg" class="img-fluid galeria-img">
-</div>
-
-<div class="galeria-item">
-<img src="img/4.jpg" class="img-fluid galeria-img">
-</div>
-
-<div class="galeria-item">
-<img src="img/5.jpg" class="img-fluid galeria-img">
-</div>
-
-<div class="galeria-item">
-<img src="img/6.jpg" class="img-fluid galeria-img">
-</div>
-
-<div class="galeria-item">
-<img src="img/7.jpg" class="img-fluid galeria-img">
-</div>
-
-<div class="galeria-item">
-<img src="img/8.jpg" class="img-fluid galeria-img">
-</div>
-
-</div>
-
+    <h2 class="text-center titulo-secundario mb-5">Galería</h2>
+    <div class="galeria-scroll">
+        <div class="galeria-item"><img src="img/1.jpg" class="galeria-img"></div>
+        <div class="galeria-item"><img src="img/2.jpg" class="galeria-img"></div>
+        <div class="galeria-item"><img src="img/3.jpg" class="galeria-img"></div>
+        <div class="galeria-item"><img src="img/4.jpg" class="galeria-img"></div>
+        <div class="galeria-item"><img src="img/5.jpg" class="galeria-img"></div>
+        <div class="galeria-item"><img src="img/6.jpg" class="galeria-img"></div>
+        <div class="galeria-item"><img src="img/7.jpg" class="galeria-img"></div>
+        <div class="galeria-item"><img src="img/8.jpg" class="galeria-img"></div>
+    </div>
 </section>
 
-<!-- FORMULARIO -->
-
 <section class="mt-5">
-
-<h2 class="text-center titulo-secundario mb-4">
-Contáctanos
-</h2>
-
+<h2 class="text-center titulo-secundario mb-4">Contáctanos</h2>
 <form id="contactForm" class="p-4 border rounded">
-
-<div class="mb-3">
-<label>Nombre</label>
-<input type="text" id="nombre" class="form-control" required>
-</div>
-
-<div class="mb-3">
-<label>Email</label>
-<input type="email" id="email" class="form-control" required>
-</div>
-
-<div class="mb-3">
-<label>Vehículo</label>
-
-<select id="vehiculo" class="form-control">
-
-<option>Citycar</option>
-<option>Sedan</option>
-<option>SUV</option>
-
-</select>
-
-</div>
-
-<div class="mb-3">
-<label>Mensaje</label>
-<textarea id="mensaje" class="form-control" required></textarea>
-</div>
-
-<button type="submit" class="btn btn-custom">
-Enviar
-</button>
-
+    <div class="mb-3">
+        <label>Nombre</label>
+        <input type="text" id="nombre" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input type="email" id="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Vehículo</label>
+        <select id="vehiculo" class="form-control">
+            <option>Citycar</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Mensaje</label>
+        <textarea id="mensaje" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-custom">Enviar</button>
 </form>
-
-<h3 class="mt-5">
-Consultas recibidas
-</h3>
-
+<h3 class="mt-5">Consultas recibidas</h3>
 <ul id="listaConsultas" class="list-group"></ul>
-
 </section>
 
 </main>
 
 <footer>
-
 <div class="container text-center">
-<p>© 2026 Eme Detailing</p>
+    <p>© 2026 Eme Detailing</p>
 </div>
-
 </footer>
 
 <script src="script.js"></script>
