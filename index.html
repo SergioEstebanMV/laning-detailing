@@ -37,7 +37,7 @@ header {
     display: flex;
     align-items: center;
     text-align: center;
-    background: 
+    background:
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
     url('image.png');
     background-size: cover;
@@ -88,6 +88,23 @@ footer {
     border-top: 1px solid var(--celeste);
     padding: 30px 0;
 }
+
+/* GALERIA */
+
+.galeria-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid var(--celeste);
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px var(--celeste);
+}
+
+.galeria-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px var(--celeste);
+}
 </style>
 </head>
 
@@ -95,10 +112,13 @@ footer {
 
 <nav class="navbar navbar-expand-lg">
 <div class="container">
+
     <img src="logo.jpeg" class="logo">
+
     <div class="ms-auto">
         <a href="https://wa.me/56959863089" class="btn btn-wsp">Reservar</a>
     </div>
+
 </div>
 </nav>
 
@@ -107,6 +127,7 @@ footer {
     <h1 class="display-3 titulo">Eme Detailing</h1>
     <p>¡Cero filas, solo brillo!</p>
     <p>📍 Servicio a domicilio en Maipú y alrededores</p>
+
     <a href="#precios" class="btn btn-custom mt-3">Ver servicios</a>
 </div>
 </header>
@@ -114,38 +135,110 @@ footer {
 <main class="container my-5">
 
 <section id="precios">
+
 <h2 class="text-center titulo-secundario mb-5">Servicios</h2>
 
 <div class="row">
+
 <div class="col-md-4">
 <div class="card p-3">
 <h3>Express</h3>
-<p class="precio">Citycar: $13.000<br>Sedan: $16.000<br>SUV: $19.000</p>
-<p class="detalle">✔ Aspirado ✔ Lavado ✔ Vidrios ✔ Ruedas ✔ Gomas</p>
+<p class="precio">
+Citycar: $13.000<br>
+Sedan: $16.000<br>
+SUV: $19.000
+</p>
+<p class="detalle">
+✔ Aspirado ✔ Lavado ✔ Vidrios ✔ Ruedas ✔ Gomas
+</p>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="card p-3">
 <h3>Full</h3>
-<p class="precio">Citycar: $19.000<br>Sedan: $24.000<br>SUV: $29.000</p>
-<p class="detalle">✔ Express + Puertas + Cera</p>
+<p class="precio">
+Citycar: $19.000<br>
+Sedan: $24.000<br>
+SUV: $29.000
+</p>
+<p class="detalle">
+✔ Express + Puertas + Cera
+</p>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="card p-3">
 <h3>Full Detallado</h3>
-<p class="precio">Citycar: $29.000<br>Sedan: $34.000<br>SUV: $39.000</p>
-<p class="detalle">✔ Detallado + Meguiar’s + Profundo</p>
+<p class="precio">
+Citycar: $29.000<br>
+Sedan: $34.000<br>
+SUV: $39.000
+</p>
+<p class="detalle">
+✔ Detallado + Meguiar’s + Profundo
+</p>
 </div>
 </div>
+
 </div>
+
 </section>
 
-<!-- 🔥 FORMULARIO + DOM -->
+<!-- GALERIA -->
+
+<section id="galeria" class="mt-5">
+
+<h2 class="text-center titulo-secundario mb-5">
+Galería
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3 col-6">
+<img src="img/1.jpeg" class="img-fluid galeria-img">
+</div>
+
+<div class="col-md-3 col-6">
+<img src="img/2.jpeg" class="img-fluid galeria-img">
+</div>
+
+<div class="col-md-3 col-6">
+<img src="img/3.jpeg" class="img-fluid galeria-img">
+</div>
+
+<div class="col-md-3 col-6">
+<img src="img/4.jpeg" class="img-fluid galeria-img">
+</div>
+
+<div class="col-md-3 col-6">
+<img src="img/5.jpeg" class="img-fluid galeria-img">
+</div>
+
+<div class="col-md-3 col-6">
+<img src="img/6.jpeg" class="img-fluid galeria-img">
+</div>
+
+<div class="col-md-3 col-6">
+<img src="img/7.jpeg" class="img-fluid galeria-img">
+</div>
+
+<div class="col-md-3 col-6">
+<img src="img/8.jpeg" class="img-fluid galeria-img">
+</div>
+
+</div>
+
+</section>
+
+<!-- FORMULARIO -->
+
 <section class="mt-5">
-<h2 class="text-center titulo-secundario mb-4">Contáctanos</h2>
+
+<h2 class="text-center titulo-secundario mb-4">
+Contáctanos
+</h2>
 
 <form id="contactForm" class="p-4 border rounded">
 
@@ -161,11 +254,15 @@ footer {
 
 <div class="mb-3">
 <label>Vehículo</label>
+
 <select id="vehiculo" class="form-control">
+
 <option>Citycar</option>
 <option>Sedan</option>
 <option>SUV</option>
+
 </select>
+
 </div>
 
 <div class="mb-3">
@@ -173,10 +270,16 @@ footer {
 <textarea id="mensaje" class="form-control" required></textarea>
 </div>
 
-<button type="submit" class="btn btn-custom">Enviar</button>
+<button type="submit" class="btn btn-custom">
+Enviar
+</button>
+
 </form>
 
-<h3 class="mt-5">Consultas recibidas</h3>
+<h3 class="mt-5">
+Consultas recibidas
+</h3>
+
 <ul id="listaConsultas" class="list-group"></ul>
 
 </section>
@@ -184,9 +287,11 @@ footer {
 </main>
 
 <footer>
+
 <div class="container text-center">
 <p>© 2026 Eme Detailing</p>
 </div>
+
 </footer>
 
 <script src="script.js"></script>
