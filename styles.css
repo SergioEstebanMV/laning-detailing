@@ -213,3 +213,25 @@ address {
         padding-right: 20px;
     }
 }
+.galeria-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.galeria-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.galeria-scroll::-webkit-scrollbar-thumb {
+    background: var(--celeste);
+    border-radius: 10px;
+}
+
+.galeria-item {
+    flex: 0 0 auto;
+    width: 250px;
+    scroll-snap-align: start;
+}
