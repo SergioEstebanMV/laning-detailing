@@ -1,485 +1,477 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eme Detailing</title>
 
-<meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Eme Detailing</title>
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-
-
-
-<style>
-
-:root {
-
-    --azul: #007bff;
-
-    --celeste: #4cc9f0;
-
-}
-
-
-
-body {
-
-    background-color: black;
-
-    color: white;
-
-}
-
-
-
-h1, h2, h3 {
-
-    font-family: 'Bangers', cursive;
-
-}
-
-
-
-nav {
-
-    background-color: black;
-
-    border-bottom: 1px solid var(--celeste);
-
-}
-
-
-
-.logo {
-
-    height: 90px;
-
-}
-
-
-
-header {
-
-    height: 90vh;
-
-    display: flex;
-
-    align-items: center;
-
-    text-align: center;
-
-    background:
-
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-
-    url('image.png');
-
-    background-size: cover;
-
-    background-position: center;
-
-}
-
-
-
-.titulo {
-
-    color: black;
-
-    -webkit-text-stroke: 2px #8a2be2;
-
-    text-shadow: 0 0 10px #8a2be2;
-
-}
-
-
-
-.titulo-secundario {
-
-    color: black;
-
-    -webkit-text-stroke: 2px #4cc9f0;
-
-    text-shadow: 0 0 10px #4cc9f0;
-
-}
-
-
-
-.btn-custom {
-
-    background: linear-gradient(to right, var(--celeste), var(--azul));
-
-    border: none;
-
-    color: black;
-
-    font-weight: bold;
-
-}
-
-
-
-.btn-wsp {
-
-    background: #25D366;
-
-    color: white;
-
-    font-weight: bold;
-
-}
-
-
-
-.card {
-
-    background-color: #000;
-
-    border: 1px solid var(--celeste);
-
-}
-
-
-
-.precio {
-
-    color: var(--celeste);
-
-    font-weight: bold;
-
-}
-
-
-
-.detalle {
-
-    color: #ccc;
-
-}
-
-
-
-footer {
-
-    background: black;
-
-    border-top: 1px solid var(--celeste);
-
-    padding: 30px 0;
-
-}
-
-
-
-/* --- NUEVA GALERÍA MODIFICADA --- */
-
-
-
-.galeria-scroll {
-
-    display: flex;
-
-    overflow-x: auto; /* Permite el deslizamiento lateral */
-
-    gap: 20px;
-
-    padding: 40px 20px;
-
-    scroll-snap-type: x mandatory; /* Hace que las fotos "encajen" al deslizar */
-
-    scrollbar-width: none; /* Oculta scrollbar en Firefox */
-
-}
-
-
-
-.galeria-scroll::-webkit-scrollbar {
-
-    display: none; /* Oculta scrollbar en Chrome/Safari */
-
-}
-
-
-
-.galeria-item {
-
-    flex: 0 0 auto;
-
-    width: 250px; /* Tamaño base cuadrado */
-
-    height: 250px; 
-
-    scroll-snap-align: center;
-
-    transition: transform 0.4s ease, opacity 0.4s ease;
-
-}
-
-
-
-.galeria-img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover; /* Mantiene la imagen cuadrada sin deformar */
-
-    border: 3px solid var(--celeste);
-
-    border-radius: 15px;
-
-    box-shadow: 0 0 15px var(--celeste);
-
-}
-
-
-
-/* Efecto para resaltar la imagen que esté en el centro (simulado con hover para esta entrega) */
-
-.galeria-item:hover {
-
-    transform: scale(1.15); /* Se agranda al pasar el mouse o tocar */
-
-    z-index: 5;
-
-}
-
-
-
-/* Ajuste para móviles: si la pantalla es pequeña, el tamaño base baja un poco */
-
-@media (max-width: 600px) {
-
-    .galeria-item {
-
-        width: 200px;
-
-        height: 200px;
-
-    }
-
-}
-
-</style>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-
 
 <body>
 
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
 
+            <img src="logo.jpeg" class="logo" alt="Logo Eme Detailing">
 
-<nav class="navbar navbar-expand-lg">
+            <div class="ms-auto">
+                <a href="https://wa.me/56959863089" class="btn btn-wsp" target="_blank">
+                    Reservar
+                </a>
+            </div>
 
-<div class="container">
+        </div>
+    </nav>
 
-    <img src="logo.jpeg" class="logo">
+    <header>
+        <div class="container">
+            <h1 class="display-3 titulo">Eme Detailing</h1>
 
-    <div class="ms-auto">
+            <p>¡Cero filas, solo brillo!</p>
 
-        <a href="https://wa.me/56959863089" class="btn btn-wsp">Reservar</a>
+            <p>📍 Servicio a domicilio en Maipú y alrededores</p>
 
-    </div>
+            <a href="#precios" class="btn btn-custom mt-3">
+                Ver servicios
+            </a>
+        </div>
+    </header>
 
-</div>
+    <main class="container my-5">
 
-</nav>
+        <section id="precios">
 
+            <h2 class="text-center titulo-secundario mb-5">
+                Servicios
+            </h2>
 
+            <div class="row">
 
-<header>
+                <div class="col-md-4">
+                    <article class="card p-3 mb-3">
 
-<div class="container">
+                        <h3>Express</h3>
 
-    <h1 class="display-3 titulo">Eme Detailing</h1>
+                        <p class="precio">
+                            Citycar: $13.000<br>
+                            Sedan: $16.000<br>
+                            SUV: $19.000
+                        </p>
 
-    <p>¡Cero filas, solo brillo!</p>
+                        <ul class="detalle">
+                            <li>Aspirado</li>
+                            <li>Lavado</li>
+                            <li>Vidrios</li>
+                            <li>Ruedas</li>
+                            <li>Gomas</li>
+                        </ul>
 
-    <p>📍 Servicio a domicilio en Maipú y alrededores</p>
+                        <button
+                            class="btn btn-custom mt-auto btn-servicio"
+                            data-servicio="Express"
+                            data-citycar="13000"
+                            data-sedan="16000"
+                            data-suv="19000"
+                        >
+                            Seleccionar servicio
+                        </button>
 
-    <a href="#precios" class="btn btn-custom mt-3">Ver servicios</a>
+                    </article>
+                </div>
 
-</div>
+                <div class="col-md-4">
+                    <article class="card p-3 mb-3">
 
-</header>
+                        <h3>Full</h3>
 
+                        <p class="precio">
+                            Citycar: $19.000<br>
+                            Sedan: $24.000<br>
+                            SUV: $29.000
+                        </p>
 
+                        <ul class="detalle">
+                            <li>Express + Puertas</li>
+                            <li>Cera</li>
+                        </ul>
 
-<main class="container my-5">
+                        <button
+                            class="btn btn-custom mt-auto btn-servicio"
+                            data-servicio="Full"
+                            data-citycar="19000"
+                            data-sedan="24000"
+                            data-suv="29000"
+                        >
+                            Seleccionar servicio
+                        </button>
 
+                    </article>
+                </div>
 
+                <div class="col-md-4">
+                    <article class="card p-3 mb-3">
 
-<section id="precios">
+                        <h3>Full Detallado</h3>
 
-<h2 class="text-center titulo-secundario mb-5">Servicios</h2>
+                        <p class="precio">
+                            Citycar: $29.000<br>
+                            Sedan: $34.000<br>
+                            SUV: $39.000
+                        </p>
 
-<div class="row">
+                        <ul class="detalle">
+                            <li>Detallado profundo</li>
+                            <li>Meguiar’s</li>
+                        </ul>
 
-    <div class="col-md-4">
+                        <button
+                            class="btn btn-custom mt-auto btn-servicio"
+                            data-servicio="Full Detallado"
+                            data-citycar="29000"
+                            data-sedan="34000"
+                            data-suv="39000"
+                        >
+                            Seleccionar servicio
+                        </button>
 
-        <div class="card p-3 mb-3">
+                    </article>
+                </div>
 
-            <h3>Express</h3>
+            </div>
+        </section>
 
-            <p class="precio">Citycar: $13.000<br>Sedan: $16.000<br>SUV: $19.000</p>
+        <section id="galeria" class="mt-5">
 
-            <p class="detalle">✔ Aspirado ✔ Lavado ✔ Vidrios ✔ Ruedas ✔ Gomas</p>
+            <h2 class="text-center titulo-secundario mb-5">
+                Galería
+            </h2>
+
+            <div class="galeria-contenedor">
+
+                <button class="galeria-flecha flecha-izquierda" id="flechaIzquierda" aria-label="Mover galería hacia la izquierda">
+                    &#10094;
+                </button>
+
+                <div class="galeria-scroll" id="galeriaScroll">
+
+                    <div class="galeria-item">
+                        <img src="img/1.jpg" class="galeria-img" alt="Trabajo detailing 1">
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="img/2.jpg" class="galeria-img" alt="Trabajo detailing 2">
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="img/3.jpg" class="galeria-img" alt="Trabajo detailing 3">
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="img/4.jpg" class="galeria-img" alt="Trabajo detailing 4">
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="img/5.jpg" class="galeria-img" alt="Trabajo detailing 5">
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="img/6.jpg" class="galeria-img" alt="Trabajo detailing 6">
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="img/7.jpg" class="galeria-img" alt="Trabajo detailing 7">
+                    </div>
+
+                    <div class="galeria-item">
+                        <img src="img/8.jpg" class="galeria-img" alt="Trabajo detailing 8">
+                    </div>
+
+                </div>
+
+                <button class="galeria-flecha flecha-derecha" id="flechaDerecha" aria-label="Mover galería hacia la derecha">
+                    &#10095;
+                </button>
+
+            </div>
+        </section>
+
+        <section id="reserva" class="mt-5">
+
+            <h2 class="text-center titulo-secundario mb-4">
+                Reserva tu hora
+            </h2>
+
+            <div class="carrito-box mb-4">
+
+                <h3>Servicio seleccionado</h3>
+
+                <p id="carritoServicio">
+                    Aún no has seleccionado un servicio.
+                </p>
+
+                <p id="carritoTotal"></p>
+
+            </div>
+
+            <form id="reservaForm" class="p-4 border rounded">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label for="reservaNombre">Nombre</label>
+                        <input
+                            type="text"
+                            id="reservaNombre"
+                            class="form-control"
+                            required
+                            minlength="3"
+                            maxlength="40"
+                            placeholder="Ingresa tu nombre"
+                        >
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="reservaEmail">Email</label>
+                        <input
+                            type="email"
+                            id="reservaEmail"
+                            class="form-control"
+                            required
+                            maxlength="80"
+                            placeholder="ejemplo@email.com"
+                        >
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="reservaTelefono">Teléfono</label>
+                        <input
+                            type="tel"
+                            id="reservaTelefono"
+                            class="form-control"
+                            required
+                            minlength="8"
+                            maxlength="12"
+                            placeholder="Ej: 912345678"
+                        >
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="reservaVehiculo">Vehículo</label>
+                        <select id="reservaVehiculo" class="form-control" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Citycar">Citycar</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label for="reservaDireccion">Dirección del cliente</label>
+                        <input
+                            type="text"
+                            id="reservaDireccion"
+                            class="form-control"
+                            required
+                            minlength="8"
+                            maxlength="120"
+                            placeholder="Ej: Avenida Siempre Viva 123, Maipú"
+                        >
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="reservaFecha">Día de reserva</label>
+                        <input
+                            type="date"
+                            id="reservaFecha"
+                            class="form-control"
+                            required
+                        >
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="reservaHora">Hora de reserva</label>
+                        <input
+                            type="time"
+                            id="reservaHora"
+                            class="form-control"
+                            required
+                            min="09:00"
+                            max="19:00"
+                        >
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label for="metodoPago">Método de pago</label>
+                        <select id="metodoPago" class="form-control" required>
+                            <option value="">Seleccione método de pago</option>
+                            <option value="Transferencia">Transferencia</option>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Tarjeta al momento del servicio">Tarjeta al momento del servicio</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="pago-simulado mt-3">
+
+                    <h3>Formulario de pago</h3>
+
+                    <p>
+                        Este formulario es referencial. El pago real se coordina al confirmar la reserva.
+                    </p>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="nombreTarjeta">Nombre del titular</label>
+                            <input
+                                type="text"
+                                id="nombreTarjeta"
+                                class="form-control"
+                                maxlength="40"
+                                placeholder="Nombre del titular"
+                            >
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="ultimosDigitos">Últimos 4 dígitos</label>
+                            <input
+                                type="text"
+                                id="ultimosDigitos"
+                                class="form-control"
+                                maxlength="4"
+                                placeholder="1234"
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-custom mt-3">
+                    Confirmar reserva
+                </button>
+
+                <p id="mensajeReserva" class="mt-3 mensaje-exito" aria-live="polite"></p>
+
+            </form>
+
+            <h3 class="mt-5">
+                Reservas recibidas
+            </h3>
+
+            <p id="contadorReservas"></p>
+
+            <ul id="listaReservas" class="list-group"></ul>
+
+        </section>
+
+        <section class="mt-5">
+
+            <h2 class="text-center titulo-secundario mb-4">
+                Contáctanos
+            </h2>
+
+            <form id="contactForm" class="p-4 border rounded">
+
+                <div class="mb-3">
+
+                    <label for="nombre">Nombre</label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        class="form-control"
+                        required
+                        minlength="3"
+                        maxlength="40"
+                        placeholder="Ingresa tu nombre"
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        required
+                        maxlength="80"
+                        placeholder="ejemplo@email.com"
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="vehiculo">Vehículo</label>
+
+                    <select id="vehiculo" class="form-control" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="Citycar">Citycar</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="mensaje">Mensaje</label>
+
+                    <textarea
+                        id="mensaje"
+                        class="form-control"
+                        required
+                        minlength="10"
+                        maxlength="300"
+                        placeholder="Escribe tu consulta"
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-custom">
+                    Enviar
+                </button>
+
+                <p id="mensajeExito" class="mt-3 mensaje-exito" aria-live="polite"></p>
+
+            </form>
+
+            <h3 class="mt-5">
+                Consultas recibidas
+            </h3>
+
+            <p id="contadorConsultas"></p>
+
+            <ul id="listaConsultas" class="list-group"></ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="container text-center">
+
+            <address>
+                Maipú, Santiago de Chile
+            </address>
+
+            <p>© 2026 Eme Detailing</p>
 
         </div>
 
-    </div>
+    </footer>
 
-    <div class="col-md-4">
-
-        <div class="card p-3 mb-3">
-
-            <h3>Full</h3>
-
-            <p class="precio">Citycar: $19.000<br>Sedan: $24.000<br>SUV: $29.000</p>
-
-            <p class="detalle">✔ Express + Puertas + Cera</p>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-4">
-
-        <div class="card p-3 mb-3">
-
-            <h3>Full Detallado</h3>
-
-            <p class="precio">Citycar: $29.000<br>Sedan: $34.000<br>SUV: $39.000</p>
-
-            <p class="detalle">✔ Detallado + Meguiar’s + Profundo</p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<section id="galeria" class="mt-5">
-
-    <h2 class="text-center titulo-secundario mb-5">Galería</h2>
-
-    <div class="galeria-scroll">
-
-        <div class="galeria-item"><img src="img/1.jpg" class="galeria-img"></div>
-
-        <div class="galeria-item"><img src="img/2.jpg" class="galeria-img"></div>
-
-        <div class="galeria-item"><img src="img/3.jpg" class="galeria-img"></div>
-
-        <div class="galeria-item"><img src="img/4.jpg" class="galeria-img"></div>
-
-        <div class="galeria-item"><img src="img/5.jpg" class="galeria-img"></div>
-
-        <div class="galeria-item"><img src="img/6.jpg" class="galeria-img"></div>
-
-        <div class="galeria-item"><img src="img/7.jpg" class="galeria-img"></div>
-
-        <div class="galeria-item"><img src="img/8.jpg" class="galeria-img"></div>
-
-    </div>
-
-</section>
-
-
-
-<section class="mt-5">
-
-<h2 class="text-center titulo-secundario mb-4">Contáctanos</h2>
-
-<form id="contactForm" class="p-4 border rounded">
-
-    <div class="mb-3">
-
-        <label>Nombre</label>
-
-        <input type="text" id="nombre" class="form-control" required>
-
-    </div>
-
-    <div class="mb-3">
-
-        <label>Email</label>
-
-        <input type="email" id="email" class="form-control" required>
-
-    </div>
-
-    <div class="mb-3">
-
-        <label>Vehículo</label>
-
-        <select id="vehiculo" class="form-control">
-
-            <option>Citycar</option>
-
-            <option>Sedan</option>
-
-            <option>SUV</option>
-
-        </select>
-
-    </div>
-
-    <div class="mb-3">
-
-        <label>Mensaje</label>
-
-        <textarea id="mensaje" class="form-control" required></textarea>
-
-    </div>
-
-    <button type="submit" class="btn btn-custom">Enviar</button>
-
-</form>
-
-<h3 class="mt-5">Consultas recibidas</h3>
-
-<ul id="listaConsultas" class="list-group"></ul>
-
-</section>
-
-
-
-</main>
-
-
-
-<footer>
-
-<div class="container text-center">
-
-    <p>© 2026 Eme Detailing</p>
-
-</div>
-
-</footer>
-
-
-
-<script src="script.js"></script>
-
-
+    <script src="script.js"></script>
 
 </body>
-
 </html>
